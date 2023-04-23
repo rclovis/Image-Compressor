@@ -28,7 +28,8 @@ alreadyIn _ [] = False
 alreadyIn (b, c, d) ((x, y, z):as) |  b == x && c == y && d == z = True
     | otherwise = alreadyIn (b, c, d) as
 
-initCentroids :: Int -> [(Int, Int, Int)] -> [(Int, Int, Int)] -> [(Int, Int, Int)]
+initCentroids :: Int -> [(Int, Int, Int)]
+    -> [(Int, Int, Int)] -> [(Int, Int, Int)]
 initCentroids _ [] l = l
 initCentroids 0 _ l = l
 initCentroids n (x:xs) l | alreadyIn x l = initCentroids n xs l
@@ -45,13 +46,14 @@ parseLine str =
     let tmp2 = snd (strtok tmp1 ',') in
     let v3 = read (fst (strtok tmp2 ',')) :: Int in (v1, v2, v3)
 
-giveClosestCentroid :: (Int, Int, Int) -> [(Int, Int, Int)] -> Int -> Int -> Int -> Int
+giveClosestCentroid :: (Int, Int, Int) -> [(Int, Int, Int)]
+    -> Int -> Int -> Int -> Int
 giveClosestCentroid _ [] _ _ best = best
 giveClosestCentroid (x, y, z) ((x', y', z'):as) b i best
     | dist < b = giveClosestCentroid (x, y, z) as dist (i + 1) i
     | otherwise = giveClosestCentroid (x, y, z) as b (i + 1) best
     where
-        tmp = ((x - x') * (x - x') + (y - y') * (y - y') + (z - z') * (z - z'))
+        tmp= ((x - x') * (x - x') + (y - y') * (y - y') + (z - z') * (z - z'))
         dist = round (sqrt (fromIntegral tmp))
 
 updateCentroids :: [(Int, Int, Int)] -> [(Int, Int, Int)] -> [Int]

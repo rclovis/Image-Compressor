@@ -6,7 +6,8 @@
 -}
 
 module Lib
-    ( printCentroid, errorLine1, errorLine2, trim, strtok, errorHandling, toTup
+    ( printCentroid, errorLine1, errorLine2, trim, strtok,
+        errorHandling, toTup
     ) where
 
 import Text.Read (readMaybe)

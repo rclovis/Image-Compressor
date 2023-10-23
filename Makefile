@@ -1,10 +1,3 @@
-##
-## EPITECH PROJECT, 2023
-## Makefile
-## File description:
-## Makefile
-##
-
 NAME	=	imageCompressor
 
 LOCAL_INSTALL_ROOT	=	$(shell stack path --local-install-root)

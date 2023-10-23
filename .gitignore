@@ -1,7 +1,5 @@
 .stack-work/
 *~
-pixels
-images
 compress.py
 tools
 scripts

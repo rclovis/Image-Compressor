@@ -1,10 +1,3 @@
-{-
--- EPITECH PROJECT, 2023
--- main
--- File description:
--- main
--}
-
 import System.Environment (getArgs)
 import Data.Maybe (fromMaybe)
 import System.Exit (exitWith, ExitCode (ExitFailure))

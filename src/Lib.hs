@@ -1,10 +1,3 @@
-{-
--- EPITECH PROJECT, 2023
--- main
--- File description:
--- main
--}
-
 module Lib
     ( printCentroid, errorLine1, errorLine2, trim, strtok,
         errorHandling, toTup
